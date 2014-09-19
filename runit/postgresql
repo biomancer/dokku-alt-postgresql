@@ -1,0 +1,12 @@
+#!/bin/sh
+PATH=$PATH:/usr/lib/postgresql/9.3/bin
+
+. /etc/container_environment.sh
+
+# run idemptoent database configuration
+sudo -i -u postgres /usr/lib/postgresql/9.3/bin/postgres --single -D /var/lib/postgresql/9.3/main -c config-file=${PG_CONFIG} <<EOF
+ALTER ROLE postgres WITH PASSWORD '${PG_ADMIN_PASS}';
+EOF
+
+exec 2>&1
+exec /sbin/setuser postgres /usr/lib/postgresql/9.3/bin/postgres -c config-file=${PG_CONFIG} -c listen-addresses=${PG_LISTEN}
