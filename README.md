@@ -35,6 +35,5 @@ To use this image with [dokku-alt](https://github.com/dokku-alt/dokku-alt) you n
 export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql
 export POSTGRESQL_USER=postgres
 export POSTGRESQL_COMMAND=/sbin/my_init
-export POSTGRESQL_CONTAINER_PASSWORD=--env PG_ADMIN_PASS=
 export POSTGRESQL_CONTAINER_VOLUME=/var/lib/postgresql
 ```
