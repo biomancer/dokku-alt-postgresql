@@ -36,4 +36,5 @@ export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql
 export POSTGRESQL_USER=postgres
 export POSTGRESQL_COMMAND=/sbin/my_init
 export POSTGRESQL_CONTAINER_VOLUME=/var/lib/postgresql
+export POSTGRESQL_CONTAINER_PASSWORD=/etc/postgresql/9.3/main/postgresql.password
 ```
