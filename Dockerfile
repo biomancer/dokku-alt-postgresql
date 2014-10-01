@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.13
+FROM phusion/baseimage:0.9.14
 MAINTAINER Morton Jonuschat <m.jonuschat@mojocode.de>
 
 ENV DEBIAN_FRONTEND noninteractive
