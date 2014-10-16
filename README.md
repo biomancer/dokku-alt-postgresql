@@ -7,6 +7,7 @@ Dockerfile to build a PostgreSQL 9.3 container for Dokku
 * [Phusion Baseimage](https://github.com/phusion/baseimage-docker) using Ubuntu 14.04 LTS
 * [Official PostgreSQL Packages](http://wiki.postgresql.org/wiki/Apt)
 * [PostgreSQL Extension Whitelisting](https://github.com/dimitri/pgextwlist)
+* [PostgreSQL Execution Statistics](http://www.postgresql.org/docs/9.3/static/pgstatstatements.html)
 * [Lightly tuned configuration](https://github.com/yabawock/dokku-alt-postgresql/blob/develop/configs/postgresql.conf)
 
 ### Phusion Baseimage
@@ -22,10 +23,15 @@ The packages provided by the PGDG allow installation of features not available i
 
 Allow normal database users to perform the operations `CREATE EXTENSION`, `DROP EXTENSION` and `ALTER EXTENSION ... UPDATE`.
 
+### PostgreSQL Execution Statistics
+
+The pg_stat_statements module provides a means for tracking execution statistics of all SQL statements executed by a server.
+This can be used to get insights into the PostgreSQL Server using tools like [PgHero](https://github.com/ankane/pghero).
+
 ### Tuned configuration
 
 The [Configuration](https://github.com/yabawock/dokku-alt-postgresql/blob/develop/configs/postgresql.conf) is tuned for
-a system memory of ~512MB and not more than 100 connections to the database.
+a system memory of 4GB, a typical web load, many tables and a maximum of 500 connections to the database.
 
 # Using the image
 
