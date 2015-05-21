@@ -1,13 +1,13 @@
 # dokku-alt-postgresql
 
-Dockerfile to build a PostgreSQL 9.3 container for Dokku
+Dockerfile to build a PostgreSQL 9.4 container for Dokku
 
 ## Features
 
 * [Phusion Baseimage](https://github.com/phusion/baseimage-docker) using Ubuntu 14.04 LTS
 * [Official PostgreSQL Packages](http://wiki.postgresql.org/wiki/Apt)
 * [PostgreSQL Extension Whitelisting](https://github.com/dimitri/pgextwlist)
-* [PostgreSQL Execution Statistics](http://www.postgresql.org/docs/9.3/static/pgstatstatements.html)
+* [PostgreSQL Execution Statistics](http://www.postgresql.org/docs/9.4/static/pgstatstatements.html)
 * [Lightly tuned configuration](https://github.com/yabawock/dokku-alt-postgresql/blob/develop/configs/postgresql.conf)
 
 ### Phusion Baseimage
@@ -42,5 +42,5 @@ export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql
 export POSTGRESQL_USER=postgres
 export POSTGRESQL_COMMAND=/sbin/my_init
 export POSTGRESQL_CONTAINER_VOLUME=/var/lib/postgresql
-export POSTGRESQL_CONTAINER_PASSWORD=/etc/postgresql/9.3/main/postgresql.password
+export POSTGRESQL_CONTAINER_PASSWORD=/etc/postgresql/9.4/main/postgresql.password
 ```

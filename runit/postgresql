@@ -1,7 +1,7 @@
 #!/bin/sh
-PATH=$PATH:/usr/lib/postgresql/9.3/bin
+PATH=$PATH:/usr/lib/postgresql/9.4/bin
 
 . /etc/container_environment.sh
 
 exec 2>&1
-exec /sbin/setuser postgres /usr/lib/postgresql/9.3/bin/postgres -c config-file=${PG_CONFIG} -c listen-addresses=${PG_LISTEN}
+exec /sbin/setuser postgres /usr/lib/postgresql/9.4/bin/postgres -c config-file=${PG_CONFIG} -c listen-addresses=${PG_LISTEN}
