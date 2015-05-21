@@ -38,7 +38,7 @@ a system memory of 4GB, a typical web load, many tables and a maximum of 500 con
 To use this image with [dokku-alt](https://github.com/dokku-alt/dokku-alt) you need to set some configuration variables in `/home/dokku/dokkurc`:
 
 ```bash
-export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql
+export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql:9.3
 export POSTGRESQL_USER=postgres
 export POSTGRESQL_COMMAND=/sbin/my_init
 export POSTGRESQL_CONTAINER_VOLUME=/var/lib/postgresql
