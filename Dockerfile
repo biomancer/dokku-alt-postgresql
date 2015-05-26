@@ -11,7 +11,7 @@ RUN apt-get update && \
     curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
     apt-get update && \
-    apt-get install -yq postgresql-9.3=9.3.6-1.pgdg14.04+1 postgresql-contrib-9.3=9.3.6-1.pgdg14.04+1 postgresql-9.3-pgextwlist=1.3-3.pgdg14.04+1 && \
+    apt-get install -yq postgresql-9.3=9.3.7-1.pgdg14.04+1 postgresql-contrib-9.3=9.3.7-1.pgdg14.04+1 postgresql-9.3-pgextwlist=1.3-3.pgdg14.04+1 && \
     apt-get clean && \
     apt-get autoremove -y
 
