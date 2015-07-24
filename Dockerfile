@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 MAINTAINER Morton Jonuschat <m.jonuschat@mojocode.de>
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -14,9 +14,6 @@ RUN apt-get update && \
     apt-get install -yq postgresql-9.4=9.4.2-1.pgdg14.04+1 postgresql-contrib-9.4=9.4.2-1.pgdg14.04+1 postgresql-9.4-pgextwlist=1.3-3.pgdg14.04+1 && \
     apt-get clean && \
     apt-get autoremove -y
-
-# Disable SSH
-RUN rm -rf /etc/service/sshd /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 # Set default environment
 RUN mkdir -p /etc/container_environment

@@ -28,17 +28,12 @@ Allow normal database users to perform the operations `CREATE EXTENSION`, `DROP 
 The pg_stat_statements module provides a means for tracking execution statistics of all SQL statements executed by a server.
 This can be used to get insights into the PostgreSQL Server using tools like [PgHero](https://github.com/ankane/pghero).
 
-### Tuned configuration
-
-The [Configuration](https://github.com/yabawock/dokku-alt-postgresql/blob/develop/configs/postgresql.conf) is tuned for
-a system memory of 4GB, a typical web load, many tables and a maximum of 500 connections to the database.
-
 # Using the image
 
 To use this image with [dokku-alt](https://github.com/dokku-alt/dokku-alt) you need to set some configuration variables in `/home/dokku/dokkurc`:
 
 ```bash
-export POSTGRESQL_IMAGE=yabawock/dokku-alt-postgresql
+export POSTGRESQL_IMAGE=biomancer/dokku-alt-postgresql:9.4
 export POSTGRESQL_USER=postgres
 export POSTGRESQL_COMMAND=/sbin/my_init
 export POSTGRESQL_CONTAINER_VOLUME=/var/lib/postgresql
