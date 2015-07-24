@@ -3,6 +3,9 @@ MAINTAINER Morton Jonuschat <m.jonuschat@mojocode.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV PG_MAJOR 9.4
+ENV PG_VERSION 9.4.4-1.pgdg14.04+1
+
 # Install dependencies
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
@@ -11,7 +14,7 @@ RUN apt-get update && \
     curl -s https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
     sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list' && \
     apt-get update && \
-    apt-get install -yq postgresql-9.4=9.4.2-1.pgdg14.04+1 postgresql-contrib-9.4=9.4.2-1.pgdg14.04+1 postgresql-9.4-pgextwlist=1.3-3.pgdg14.04+1 && \
+    apt-get install -yq postgresql-$PG_MAJOR=$PG_VERSION postgresql-contrib-$PG_MAJOR=$PG_VERSION postgresql-9.4-pgextwlist=1.3-3.pgdg14.04+1 && \
     apt-get clean && \
     apt-get autoremove -y
 
